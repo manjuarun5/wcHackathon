@@ -1,0 +1,30 @@
+{
+  "processing_timestamp": "2026-01-28T22:35:19.025947",
+  "total_items_processed": 85526,
+  "total_orders": 72704,
+  "unique_importers": 15659,
+  "date_range": {
+    "start": "2026-01-01",
+    "end": "2026-01-30"
+  },
+  "level_1_identity": {
+    "split_shipments_detected": 26,
+    "revenue_risks": 0,
+    "affected_value_aed": 0.0
+  },
+  "level_2_classification": {
+    "items_classified": 85526,
+    "items_requiring_review": 52238,
+    "unique_hs_codes": 22
+  },
+  "level_3_valuation": {
+    "total_duty_collected_aed": 818.23,
+    "dutiable_items": 46,
+    "duty_free_items": 85480
+  },
+  "level_4_protection": {
+    "items_flagged": 1960,
+    "category_a_dangerous": 1863,
+    "category_b_restricted": 97
+  }
+}

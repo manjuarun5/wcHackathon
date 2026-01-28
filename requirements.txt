@@ -1,0 +1,32 @@
+# ============================================================================
+# WCO 2026 Hackathon - Customs E-Commerce Processing Pipeline
+# Requirements File
+# ============================================================================
+
+# Core Data Processing Libraries
+# ============================================================================
+pandas>=2.0.0
+numpy>=1.24.0
+
+# HTTP Requests (for HS Code API)
+# ============================================================================
+requests>=2.31.0
+
+# Azure OpenAI (for AI-Enhanced Version V2)
+# ============================================================================
+openai>=1.12.0
+
+# Dashboard & Visualization
+# ============================================================================
+streamlit>=1.28.0
+plotly>=5.17.0
+
+# Additional Dependencies (auto-installed with above packages)
+# ============================================================================
+# python-dateutil (via pandas)
+# pytz (via pandas)
+# six (via pandas)
+# certifi (via requests)
+# charset-normalizer (via requests)
+# idna (via requests)
+# urllib3 (via requests)
