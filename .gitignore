@@ -69,3 +69,6 @@ Thumbs.db
 # Azure/OpenAI
 azure.json
 config.json
+
+# Azure deployment
+.azure/
