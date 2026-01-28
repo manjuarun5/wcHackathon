@@ -1,0 +1,12 @@
+# Oryx build configuration
+# This file tells Oryx to build the Python app and install dependencies
+
+[build]
+python_version = 3.11
+
+[run]
+# Pre-build script - runs before Oryx builds the app
+pre_build = "echo 'Starting build process...'"
+
+# Post-build script - runs after dependencies are installed  
+post_build = "echo 'Build complete. Dependencies installed.'"
