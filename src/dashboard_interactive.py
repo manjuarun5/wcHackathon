@@ -59,11 +59,35 @@ st.markdown("""
 def load_default_data():
     """Load default data files"""
     try:
-        orders_df = pd.read_csv('../input-data/ecommerce_orders.csv')
-        tariff_df = pd.read_csv('../input-data/tariff.csv')
-        return orders_df, tariff_df, True
+        # Get the directory of this script
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        
+        # Try multiple path configurations (local and Azure)
+        possible_paths = [
+            # Local development path
+            (os.path.join(current_dir, '..', 'input-data', 'ecommerce_orders.csv'),
+             os.path.join(current_dir, '..', 'input-data', 'tariff.csv')),
+            # Azure deployment path
+            (os.path.join('/home/site/wwwroot', 'input-data', 'ecommerce_orders.csv'),
+             os.path.join('/home/site/wwwroot', 'input-data', 'tariff.csv')),
+            # Alternative Azure path
+            (os.path.join(current_dir, 'input-data', 'ecommerce_orders.csv'),
+             os.path.join(current_dir, 'input-data', 'tariff.csv')),
+        ]
+        
+        # Try each path configuration
+        for orders_path, tariff_path in possible_paths:
+            if os.path.exists(orders_path) and os.path.exists(tariff_path):
+                orders_df = pd.read_csv(orders_path)
+                tariff_df = pd.read_csv(tariff_path)
+                return orders_df, tariff_df, True
+        
+        # If no paths work, raise an error
+        raise FileNotFoundError("Default data files not found. Please upload your own data files.")
+        
     except Exception as e:
         st.error(f"Error loading default data: {e}")
+        st.info("💡 Tip: Please use the 'Upload' feature to provide your own data files.")
         return None, None, False
 
 
