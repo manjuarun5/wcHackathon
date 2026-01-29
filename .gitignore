@@ -72,3 +72,7 @@ config.json
 
 # Azure deployment
 .azure/
+
+# Deployment packages
+*.zip
+deploy*.zip
