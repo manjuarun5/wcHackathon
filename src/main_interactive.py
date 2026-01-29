@@ -40,7 +40,7 @@ class CustomsECommercePipeline:
             'Content-Type': 'application/json',
             'Authorization': 'Basic dHRlazpzSzhpTHVRQUhtbG5JNGF4'
         }
-        self.USE_API = True  # Set to True to use external API
+        self.USE_API = False  # Set to False for faster processing (rule-based instead of API)
         
         # Risk profiles from Risk Intelligence document
         self.risk_profiles = {
